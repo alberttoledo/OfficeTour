@@ -10,7 +10,7 @@ function init(bundle, parent, options) {
     // Add custom options here
     cursorVisibility: 'visible',
     allowCarmelDeeplink: true,
-    enableHotReload: true,
+    enableHotReload: false,
     ...options,
   });
   vr.render = function() {

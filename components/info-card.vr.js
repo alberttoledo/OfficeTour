@@ -21,7 +21,7 @@ export default class InfoCard extends React.Component {
         onExit={this.props.playVideo}
         style={{
           transform: [
-            {translate: [90, -100, 380]},
+            {translate: [90, -100, 680]},
             {rotateY: -180},
           ],
           layoutOrigin: [0.4, 0.7],
