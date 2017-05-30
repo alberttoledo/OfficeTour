@@ -8,43 +8,49 @@ import {
 
 export default class InfoCard extends React.Component {
   render() {
-    const { currentTime, exitOn, enterOn } = this.props;
-    const shouldRender = (currentTime < exitOn && currentTime > enterOn);
+    // const { currentTime, exitOn, enterOn } = this.props;
+    // const shouldRender = (currentTime < exitOn && currentTime > enterOn);
+    //
+    // if (currentTime && enterOn && exitOn) {
+    //   if (!shouldRender) {
+    //     return null;
+    //   }
+    // }
 
-    if (!shouldRender) {
+    if (this.props.currentRoom !== this.props.ownerRoom) {
       return null;
     }
 
     return (
       <View
-        onEnter={() => {this.props.pauseVideo()}}
-        onExit={this.props.playVideo}
+        {...this.props}
+        billboarding={'on'}
         style={{
           transform: [
-            {translate: [90, -100, 680]},
-            {rotateY: -180},
+            {translate: this.props.position},
+            // {rotateY: -180},
           ],
-          layoutOrigin: [0.4, 0.7],
-          width: 220,
-          height: 200,
+          // layoutOrigin: [0.4, 0.7],
+          width: 3.4,
+          height: 2,
           backgroundColor: 'white',
           position: 'relative',
         }}
       >
-        <Image
+        {/* <Image
           style={{
-            width: 200,
-            height: 100,
+            width: 4,
+            height: 2,
             position: 'absolute',
           }}
           source={asset(`../static_assets/${this.props.imageName}`)}
-        />
+        /> */}
         <Text
           style={{
-            fontSize: 12,
+            fontSize: 0.8,
             color: 'black',
-            position: 'relative',
-            marginTop: 100,
+            marginTop: 0.5,
+            position: 'relative'
           }}
         >
         {this.props.description}

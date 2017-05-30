@@ -18,7 +18,7 @@ export default class VideoMain extends React.Component {
     this.state = {
       playerState: new MediaPlayerState({
         autoPlay: true,
-        muted: false,
+        muted: true,
         currentTime: 0,
         playing: true,
       }),
@@ -29,6 +29,10 @@ export default class VideoMain extends React.Component {
     this.state.playerState.onTimeUpdate = (e) => {
       this.setCurrentTimeState(e.nativeEvent.currentTime);
     };
+  }
+
+  componentDidMount() {
+    this.playVideo();
   }
 
   pauseVideo = () => {
@@ -73,21 +77,12 @@ export default class VideoMain extends React.Component {
         </VrButton>
         <InfoCard
           currentTime={this.state.currentTime}
-          playVideo={this.playVideo}
-          pauseVideo={this.pauseVideo}
+          playVideo={this.pauseVideo}
+          pauseVideo={this.playVideo}
           exitOn={10}
-          enterOn={5}
+          enterOn={0}
           imageName={'historical.png'}
           description={'Historical Dash'}
-        />
-        <InfoCard
-          currentTime={this.state.currentTime}
-          playVideo={this.playVideo}
-          pauseVideo={this.pauseVideo}
-          exitOn={17}
-          enterOn={12}
-          imageName={'marti.png'}
-          description={'Seagull'}
         />
       </View>
     );
