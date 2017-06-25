@@ -31,10 +31,14 @@ export default class InfoCard extends React.Component {
             // {rotateY: -180},
           ],
           // layoutOrigin: [0.4, 0.7],
-          width: 3.4,
-          height: 2,
-          backgroundColor: 'white',
+          width: 4.8,
+          height: 1.5,
+          paddingTop: -1,
+          backgroundColor: '#26495C',
           position: 'relative',
+          borderWidth: 0.1,
+          padding: 0.2,
+          borderColor: '#5CC4BE',
         }}
       >
         {/* <Image
@@ -47,8 +51,8 @@ export default class InfoCard extends React.Component {
         /> */}
         <Text
           style={{
-            fontSize: 0.8,
-            color: 'black',
+            fontSize: 0.6,
+            color: 'white',
             marginTop: 0.5,
             position: 'relative'
           }}
